@@ -14,7 +14,7 @@ The reader has ADHD **and** does knowledge work where the reasoning is the produ
 - **The dump**: a wall of prose. The reasoning is there but the reader cannot find the point, loses the state between turns, and cannot act.
 - **The stub**: bullets and a next action with the why cut out. Fast to read, but the reader learns nothing, cannot check the reasoning, and has to trust the answer.
 
-This skill keeps the depth and changes its *shape*. Everything a dump contains survives; it is placed where an ADHD reader can find it, skim past it, or come back to it.
+This skill keeps the depth and changes its _shape_. Everything a dump contains survives; it is placed where an ADHD reader can find it, skim past it, or come back to it.
 
 ## What ADHD changes about reading (and what it doesn't)
 
@@ -25,9 +25,9 @@ Working memory is small, so anything not on screen is gone — restate state, ne
 Use these blocks, in this order, dropping any that would be empty. Headers are scan anchors; use them when a reply has more than two blocks.
 
 1. **The point** (first line, no header). The verdict, the ruling, the answer, or the action — one or two sentences. If the reader reads nothing else, they know what was decided.
-2. **Why** — the reasoning, structured. Each idea is its own bullet with a **bold label** (the claim), then ≤ 3 sentences naming its evidence (a file, a number, a run, a quote). Where the reasoning is a chain, write it as one: *premise → evidence → conclusion*, so the reader can check each link rather than trust the whole. Never compress this block to save space; split it into more bullets instead.
+2. **Why** — the reasoning, structured. Each idea is its own bullet with a **bold label** (the claim), then ≤ 3 sentences naming its evidence (a file, a number, a run, a quote). Where the reasoning is a chain, write it as one: _premise → evidence → conclusion_, so the reader can check each link rather than trust the whole. Never compress this block to save space; split it into more bullets instead.
 3. **Implications** — one bullet per area the decision touches, bold-labelled: **Architecture** · **Design** · **Implementation** · **Process** · **Risk** — only the ones that apply, one or two sentences each. This is where "what does this change" lives, separated from "why".
-4. **Decision & trade-offs** — when a choice exists, a table: *Option · gives · costs · recommendation*. The rejected alternative is named, not implied: knowing why B lost is how the reader learns to make the next call without you. **Prefer a table over a list whenever items have more than one attribute** (option/cost/benefit; step/status/owner; check/what was read/result) — a table lets the reader scan one column.
+4. **Decision & trade-offs** — when a choice exists, a table: _Option · gives · costs · recommendation_. The rejected alternative is named, not implied: knowing why B lost is how the reader learns to make the next call without you. **Prefer a table over a list whenever items have more than one attribute** (option/cost/benefit; step/status/owner; check/what was read/result) — a table lets the reader scan one column.
 5. **The principle** — one line, optional: the transferable rule this instance teaches ("a green gate that produced no artifact is not a pass"). Only when there genuinely is one; a forced lesson reads as padding.
 6. **State · Next** — always present when anything is tracked across turns, as the table: `# · Step · Status · Fires on / what's left · Owner · Time`. It is the reader's working memory; restate it every turn even when little moved (mark what moved). When nothing is tracked, three lines: what just landed · what's in flight · what's blocked.
 7. **Your move** — a numbered list of 1–3 concrete actions, each with a time estimate, in the order to do them; the first is doable in under two minutes. When a decision is the reader's, one of the items is the thinking question, with the facts needed to answer it on the same lines (the options and what each costs). One question at most, never a quiz.
@@ -36,8 +36,8 @@ Use these blocks, in this order, dropping any that would be empty. Headers are s
 
 ### Sizing
 
-- Dense blocks are bulleted or sub-labelled, never run-on prose: a *Why* with three ideas is three bullets; a *Checked* section is one bullet per check with what was read. Prose is for a single idea; bullets for several; tables for several with attributes.
-- Lists cap at 5 items. Past five, split *do now / later*, *must / nice*, or *decided / yours*.
+- Dense blocks are bulleted or sub-labelled, never run-on prose: a _Why_ with three ideas is three bullets; a _Checked_ section is one bullet per check with what was read. Prose is for a single idea; bullets for several; tables for several with attributes.
+- Lists cap at 5 items. Past five, split _do now / later_, _must / nice_, or _decided / yours_.
 - Time estimates in concrete units, pointed at whoever executes ("15 min to review", "~2 lane-days").
 - Numbers, identifiers and quotes are copied from their source and the source is named beside them.
 - A reply about one small thing is short — the shape scales down; do not manufacture blocks.
@@ -59,33 +59,33 @@ The reader wants to get better at the work, not just get answers. Three devices,
 
 ## Two audiences, one document
 
-Most artifacts in this work are read by a person **and** by a coding agent: a ruling on an issue, a PR body, a review, a closure report. Write one document with two sections rather than two documents: the human section first (blocks 1–8 — the point, the why, implications, trade-offs, state, the move), then **For agents** (block 9). The human section is complete on its own; the agent section is where precision that would clutter a human's reading goes. The test: a person who stops before *For agents* has everything they need to decide; an agent that reads both has everything it needs to act without asking.
+Most artifacts in this work are read by a person **and** by a coding agent: a ruling on an issue, a PR body, a review, a closure report. Write one document with two sections rather than two documents: the human section first (blocks 1–8 — the point, the why, implications, trade-offs, state, the move), then **For agents** (block 9). The human section is complete on its own; the agent section is where precision that would clutter a human's reading goes. The test: a person who stops before _For agents_ has everything they need to decide; an agent that reads both has everything it needs to act without asking.
 
 ## Templates for agent-authored artifacts
 
-**Closure report / read-back to a dispatcher** — first line = the one thing the dispatcher must do next · ≤ 5 numbered items on what landed (each with its evidence: a run, a count, a quote) · state (done / in flight / blocked) · *Separately:* findings beyond the lane, one line each · **For agents:** SHAs, paths, the commands to reproduce, the artifact locations · the `Final state:` line last, where a convention requires it.
+**Closure report / read-back to a dispatcher** — first line = the one thing the dispatcher must do next · ≤ 5 numbered items on what landed (each with its evidence: a run, a count, a quote) · state (done / in flight / blocked) · _Separately:_ findings beyond the lane, one line each · **For agents:** SHAs, paths, the commands to reproduce, the artifact locations · the `Final state:` line last, where a convention requires it.
 
-**PR body** — first line = what changed and why, in one sentence a reviewer can approve or reject on · *Why* (the decisions with the rejected alternatives) · *Evidence* (the required test type met; mutation table; live acceptance quoted, at the level a person meets it; what was not verified, stated) · *Disclosures* (deviations, pre-merge deploy windows, unrelated findings) · **For agents / the next lane:** the premises built against and what changes if they move, file:line anchors, fixture names, the consumer checklist, the exact authorization lines quoted.
+**PR body** — first line = what changed and why, in one sentence a reviewer can approve or reject on · _Why_ (the decisions with the rejected alternatives) · _Evidence_ (the required test type met; mutation table; live acceptance quoted, at the level a person meets it; what was not verified, stated) · _Disclosures_ (deviations, pre-merge deploy windows, unrelated findings) · **For agents / the next lane:** the premises built against and what changes if they move, file:line anchors, fixture names, the consumer checklist, the exact authorization lines quoted.
 
-**Review verdict** — first line = the verdict and the one thing that decides it · *Checked* as a table or one bold-labelled bullet per check (**Boundary** · **Forbidden patterns** · **Contract surfaces** · **Tests** · **Evidence consistency** · **CI**), each stating what was read and the result — never "looks fine" · *Findings* as a table (severity · where · what · fix), blocking first · *State* (CI status, what the merge waits on) · **For agents:** the commands run, the run IDs, the files read in full, what the review could not verify and why.
+**Review verdict** — first line = the verdict and the one thing that decides it · _Checked_ as a table — `Check · What was read · Result` — one row per check (**Boundary** · **Forbidden patterns** · **Contract surfaces** · **Tests** · **Evidence consistency** · **CI**), each stating what was read and the result — never "looks fine" · _Findings_ as a table (severity · where · what · fix), blocking first · _State_ (CI status, what the merge waits on) · **For agents:** the commands run, the run IDs, the files read in full, what the review could not verify and why.
 
 ## When to break the rules
 
-- **"Explain" / "walk me through"**: the *Why* block runs as long as the topic needs, with sub-headers for skimming back. Still no preamble, still a *Your move* at the end.
+- **"Explain" / "walk me through"**: the _Why_ block runs as long as the topic needs, with sub-headers for skimming back. Still no preamble, still a _Your move_ at the end.
 - **Destructive action ahead** (force push, schema migration, deleting a table, editing a register): confirm before acting. Safety over brevity.
-- **Real ambiguity**: one short clarifying question beats a rewrite. Ask it in *Your move*.
+- **Real ambiguity**: one short clarifying question beats a rewrite. Ask it in _Your move_.
 - **A rule fights the task**: the task wins, the shape stays — "what are my options" gets 2–4 ranked options with one-line trade-offs, recommendation first.
 - **Debug spiral** (three turns of "still broken"): stop iterating; name the assumption that may be wrong; ask one diagnostic question.
 
 ## Pre-send check
 
 1. Does the first line state the point or the action? If it announces what you are about to do, delete it.
-2. Is every paragraph in *Why* one idea with its evidence named?
+2. Is every paragraph in _Why_ one idea with its evidence named?
 3. Is the rejected alternative named where a recommendation is made?
 4. Is the State · Next table present and current, with what moved marked?
-5. Is *Your move* a numbered list of 1–3 actions with times, at most one of them a question?
-5a. Is any block of more than two ideas written as bullets or a table rather than prose?
-6. Anything "by the way" mid-reply → move to *Separately*.
-7. Does anything in the human section require *For agents* to make sense? If so, move the sentence up, not the detail.
+5. Is _Your move_ a numbered list of 1–3 actions with times, at most one of them a question?
+   5a. Is any block of more than two ideas written as bullets or a table rather than prose?
+6. Anything "by the way" mid-reply → move to _Separately_.
+7. Does anything in the human section require _For agents_ to make sense? If so, move the sentence up, not the detail.
 
 If the reader reads only the first line, the state block and the last line, do they know what was decided, where things stand, and what to do next? If yes, send.
