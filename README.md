@@ -8,8 +8,8 @@ This project is intended to be a simple home for curated skills that can be adde
 
 At the moment, the repository is intentionally lightweight:
 
-- no starter skills are included yet
 - skills can be added manually as they are created
+- the repository now includes its first skill: [`structured-depth`](structured-depth.md)
 - the focus is on keeping the repository easy to organize and expand
 
 ## What this repository will contain
@@ -26,9 +26,13 @@ Over time, this repository can be used to store skills for areas such as:
 
 Use this repository as a central place to maintain your skills library. Add new skills manually whenever you create one, and organize them in the structure that best fits your workflow.
 
+## Current skills
+
+- [`structured-depth`](structured-depth.md) — an output-structuring skill for substantive replies and agent-facing artifacts, designed for readers who want full reasoning in a more scannable format.
+
 ## Current status
 
-This repository is currently a starting point with project metadata and documentation only.
+This repository now contains its first skill and is ready to grow as more skills are added manually over time.
 
 ## License
 
