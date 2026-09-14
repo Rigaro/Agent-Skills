@@ -29,10 +29,15 @@ Use this repository as a central place to maintain your skills library. Add new 
 ## Current skills
 
 - [`structured-depth`](structured-depth.md) — an output-structuring skill for substantive replies and agent-facing artifacts, designed for readers who want full reasoning in a more scannable format.
+- [`unity-live-editor-loop`](unity-live-editor-loop.md) — route work across the Unity MCP server, Meta XR bridge and Unity CLI, keep the edit-compile-test-play loop safe, and recover from Safe Mode.
+- [`unity-safe-mode-recovery`](unity-safe-mode-recovery.md) — detect and recover a Unity editor in Safe Mode, stuck compiling or unreachable from MCP and CLI tools.
+- [`unity-tests-without-asmdef`](unity-tests-without-asmdef.md) — add and run NUnit EditMode tests in a Unity project that has no assembly definitions.
+- [`iec62304-verification-log`](iec62304-verification-log.md) — write pull request bodies that double as IEC 62304 verification records (instructions, acceptance criteria, evidence, regression analysis).
+- [`unity-doc-audit`](unity-doc-audit.md) — audit and improve Unity script documentation and onboarding without changing behaviour.
 
 ## Current status
 
-This repository now contains its first skill and is ready to grow as more skills are added manually over time.
+This repository contains the structured-depth output skill and a first set of Unity and regulated-software development skills mirrored from project work; it is ready to grow as more skills are added manually over time.
 
 ## License
 
