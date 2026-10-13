@@ -52,7 +52,7 @@ A person reads shape faster than prose when the content has one. Four shapes ear
 Three rules hold without the companion skill:
 
 - **Text is the record.** Every number, identifier and verbatim line shown in a visual is also in the text beside it; the visual is a view, never the only copy.
-- **Five glyphs, beside the word, never instead of it:** `✅ landed` · `🔄 in flight` · `⏳ waiting on someone else` · `⛔ blocked` · `↗ moved this turn`. They go in State tables, chips and summaries.
+- **Five glyphs, beside the word, never instead of it:** `✅ landed` · `🔄 in flight` · `⏳ waiting on someone else` · `⛔ blocked` · `↗ moved this turn`. They go in State tables, chips and summaries. ⏳ and ⛔ split on whether anyone is acting: ⏳ when a named person or system is working on it (a reviewer, CI, an approval queue); ⛔ when nothing moves until a decision, a fix or an unblock that nobody owns yet. The source's own word does not decide it — "blocked on the security review" is ⏳ while the reviewer is reviewing.
 - **A diagram is inspected before it is sent.** Rendered on its surface and looked at; a diagram that shows as code is a defect, and a table replaces it where nothing can render it.
 
 ## Learning as well as consuming
