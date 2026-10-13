@@ -26,6 +26,16 @@ const browser = await launchBrowser();
 try {
   for (const { name, ...options } of views) {
     const context = await browser.newContext(options);
+    // A page published into a host skeleton (an artifact) gets its viewport meta from the host, so the
+    // file has none and a phone would lay it out at 980px. Add one when missing, and say so below.
+    await context.addInitScript(() => {
+      document.addEventListener('DOMContentLoaded', () => {
+        if (document.querySelector('meta[name="viewport"]')) return;
+        const meta = Object.assign(document.createElement('meta'), { name: 'viewport', content: 'width=device-width, initial-scale=1' });
+        document.head.append(meta);
+        window.__viewportAdded = true;
+      });
+    });
     const page = await context.newPage();
     const errors = [];
     page.on('console', (message) => message.type() === 'error' && errors.push(message.text()));
@@ -34,6 +44,7 @@ try {
     await page.evaluate(() => document.fonts.ready);
 
     const report = await page.evaluate(() => ({
+      viewportAdded: Boolean(window.__viewportAdded),
       scrollWidth: document.documentElement.scrollWidth,
       innerWidth: window.innerWidth,
       svgs: [...document.querySelectorAll('svg')]
@@ -51,6 +62,9 @@ try {
     console.log(`${name}: ${file}`);
     console.log(`  {scrollWidth: ${report.scrollWidth}, innerWidth: ${report.innerWidth}}${scrolls ? '  <- page scrolls sideways' : ''}`);
     console.log(`  visible svg: ${report.svgs.join(', ') || 'none'}`);
+    if (report.viewportAdded && options.isMobile) {
+      console.log('  no viewport meta in the page; added width=device-width (a host skeleton adds one; a standalone page needs its own)');
+    }
     if (errors.length) console.log(`  console errors:\n    ${errors.join('\n    ')}`);
     await context.close();
   }
