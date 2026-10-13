@@ -1,44 +1,55 @@
 # Agent-Skills
 
-A repository for collecting reusable skills for agentic software development lifecycle workflows and knowledge agents.
+Reusable [Agent Skills](https://agentskills.io) for agentic software development and knowledge work, packaged as a Claude Code plugin marketplace.
 
-## Overview
+## Skills
 
-This project is intended to be a simple home for curated skills that can be added over time as they are created and refined.
+| Plugin | Skill | What it does |
+| --- | --- | --- |
+| `structured-depth` | [`structured-depth`](skills/structured-depth/SKILL.md) | Shapes substantive replies and agent-facing artifacts (PR bodies, review verdicts, closure reports) for a reader with ADHD who still wants the full reasoning: the point first, the why in scannable blocks, state and next steps in a table, and a "For agents" block for the precision. |
+| | [`visual-companion`](skills/visual-companion/SKILL.md) | Picks the visual for a reply or page (table, collapsed evidence, callout, Mermaid diagram, companion artifact page) by what the surface renders, and checks it by rendering and looking. Ships scripts that pre-render Mermaid to light and dark SVG and screenshot the page. |
+| `unity-workflows` | [`unity-live-editor-loop`](skills/unity-live-editor-loop/SKILL.md) | Routes work across the Unity MCP server, Meta XR bridge and Unity CLI, and keeps the edit-compile-test-play loop safe. |
+| | [`unity-safe-mode-recovery`](skills/unity-safe-mode-recovery/SKILL.md) | Detects and recovers a Unity editor in Safe Mode, stuck compiling, or unreachable from MCP and CLI tools. |
+| | [`unity-tests-without-asmdef`](skills/unity-tests-without-asmdef/SKILL.md) | Adds and runs NUnit EditMode tests in a Unity project that has no assembly definitions. |
+| | [`unity-doc-audit`](skills/unity-doc-audit/SKILL.md) | Audits and improves Unity script documentation and onboarding without changing behaviour. |
+| `regulated-software` | [`iec62304-verification-log`](skills/iec62304-verification-log/SKILL.md) | Writes pull request bodies that double as IEC 62304 verification records. |
 
-At the moment, the repository is intentionally lightweight:
+## Install
 
-- skills can be added manually as they are created
-- the repository now includes its first skill: [`structured-depth`](structured-depth.md)
-- the focus is on keeping the repository easy to organize and expand
+**Claude Code**, one plugin at a time:
 
-## What this repository will contain
+```
+/plugin install structured-depth --marketplace Rigaro/Agent-Skills
+/plugin install unity-workflows --marketplace Rigaro/Agent-Skills
+/plugin install regulated-software --marketplace Rigaro/Agent-Skills
+```
 
-Over time, this repository can be used to store skills for areas such as:
+On Claude Code before 2.1.275, add the marketplace first with `/plugin marketplace add Rigaro/Agent-Skills`, then `/plugin install <plugin>@rigaro-agent-skills`.
 
-- planning and task breakdown
-- implementation and refactoring workflows
-- testing and validation
-- code review and security review
-- knowledge retrieval and synthesis
+**claude.ai**: build the archives and upload a `dist/<skill>.skill` file in the Skills section of your settings.
 
-## Usage
+```
+python scripts/package_skills.py
+```
 
-Use this repository as a central place to maintain your skills library. Add new skills manually whenever you create one, and organize them in the structure that best fits your workflow.
+**Any agent that reads skill folders**: copy `skills/<skill>/` into its skills directory (for Claude Code, `~/.claude/skills/<skill>/`).
 
-## Current skills
+## Layout
 
-- [`structured-depth`](structured-depth.md) — an output-structuring skill for substantive replies and agent-facing artifacts, designed for readers who want full reasoning in a more scannable format.
-- [`unity-live-editor-loop`](unity-live-editor-loop.md) — route work across the Unity MCP server, Meta XR bridge and Unity CLI, keep the edit-compile-test-play loop safe, and recover from Safe Mode.
-- [`unity-safe-mode-recovery`](unity-safe-mode-recovery.md) — detect and recover a Unity editor in Safe Mode, stuck compiling or unreachable from MCP and CLI tools.
-- [`unity-tests-without-asmdef`](unity-tests-without-asmdef.md) — add and run NUnit EditMode tests in a Unity project that has no assembly definitions.
-- [`iec62304-verification-log`](iec62304-verification-log.md) — write pull request bodies that double as IEC 62304 verification records (instructions, acceptance criteria, evidence, regression analysis).
-- [`unity-doc-audit`](unity-doc-audit.md) — audit and improve Unity script documentation and onboarding without changing behaviour.
+```
+.claude-plugin/marketplace.json   plugins and the skills each one bundles
+skills/<skill>/SKILL.md           one folder per skill: frontmatter (name, description) and instructions
+skills/<skill>/scripts/           helper scripts the skill runs, where it has any
+scripts/package_skills.py         builds dist/<skill>.skill archives for claude.ai (dist/ is not committed)
+```
 
-## Current status
+## Adding a skill
 
-This repository contains the structured-depth output skill and a first set of Unity and regulated-software development skills mirrored from project work; it is ready to grow as more skills are added manually over time.
+1. Create `skills/<skill>/SKILL.md`; the frontmatter `name` matches the folder name, and the `description` says what the skill does and when to use it (1024 characters at most).
+2. Add `./skills/<skill>` to a plugin's `skills` list in `.claude-plugin/marketplace.json`, or add a new plugin entry.
+3. Check with `claude plugin validate . --strict` and `python scripts/package_skills.py <skill>`.
+4. Add a row to the table above.
 
 ## License
 
-This project is released under the Unlicense. See the [LICENSE](LICENSE) file for details.
+Released under the Unlicense. See [LICENSE](LICENSE).

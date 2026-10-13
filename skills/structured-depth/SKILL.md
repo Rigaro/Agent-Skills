@@ -1,7 +1,7 @@
 ---
 name: structured-depth
 description: 'Shape every substantive reply and every agent-facing artifact (PR bodies, review verdicts, closure reports) for a reader with ADHD who still wants the full reasoning: lead with the point, structure the why (evidence, implications, trade-offs) into scannable blocks, restate state and next steps in a table, and make the reader think as well as consume — the principle behind each decision, the rejected alternative, and one question where the decision is theirs; when the reader asks for options or alternatives, the options are laid out first and the recommendation comes last. Use this for reviews, rulings, plan discussions, status updates, architecture and design discussions, and agent closure reports. Every artifact is written for two audiences: the human section first, complete on its own, then a "For agents" block holding identifiers, paths, commands and verbatim lines. Stays on for the whole session; the reader turns it off with "stop structured mode".'
-license: MIT
+license: Unlicense
 metadata:
   tags: "ADHD, Output Style, Reasoning, Learning, Program Management"
   category: "productivity"
@@ -45,6 +45,16 @@ Use these blocks in this order, dropping any that would be empty. Headers are sc
 - Idioms are replaced with the literal action.
 - **State what to do. Add what to avoid only when it names a mistake the reader has made or is about to make** — "the retrieval record lives on the turn record, so citations need a frame change" corrects a live misreading and stays; "tables, never run-on prose" corrects nothing and comes out. A rule that needs its negation to be understood is usually two rules.
 
+## Visuals (the gate to visual-companion)
+
+A person reads shape faster than prose when the content has one. Four shapes earn a visual: several tracked items with several attributes (a board); a flow — a sequence, a race between writers, a state machine; a before/after; a set of options. When the reply is for a person and one of these is present, add the visual at the lowest rung that carries it: a table · a collapsed block for evidence · a callout for the one line that must not be missed · a diagram for a flow · a companion page for a board the reader filters or returns to. Which rungs render depends on the surface (a GitHub comment, a chat reply, an artifact page, a Notion page); the `visual-companion` skill holds that table, the page rules, the diagram guardrails and the render-and-look check. Load it whenever a rung above "table" is in play.
+
+Three rules hold without the companion skill:
+
+- **Text is the record.** Every number, identifier and verbatim line shown in a visual is also in the text beside it; the visual is a view, never the only copy.
+- **Five glyphs, beside the word, never instead of it:** `✅ landed` · `🔄 in flight` · `⏳ waiting on someone else` · `⛔ blocked` · `↗ moved this turn`. They go in State tables, chips and summaries.
+- **A diagram is inspected before it is sent.** Rendered on its surface and looked at; a diagram that shows as code is a defect, and a table replaces it where nothing can render it.
+
 ## Learning as well as consuming
 
 The reader wants to get better at the work as well as get answers. Three devices, used lightly:
@@ -71,7 +81,7 @@ Most artifacts in this work are read by a person **and** by a coding agent: a ru
 
 ## Templates for agent-authored artifacts
 
-**Closure report / read-back to a dispatcher** — first line = the one thing the dispatcher must do next · up to five numbered items on what landed (each with its evidence: a run, a count, a quote) · state (done / in flight / blocked) · *Separately:* findings beyond the lane, one line each · **For agents:** SHAs, paths, the commands to reproduce, the artifact locations · the `Final state:` line last, where a convention requires it.
+**Closure report / read-back to a dispatcher** — first line = the one thing the dispatcher must do next · up to five numbered items on what landed (each with its evidence: a run, a count, a quote) · state (done / in flight / blocked) · *Separately:* findings beyond the lane, one line each · **For agents:** SHAs, paths, the commands to reproduce, the artifact locations · the `Final state:` line last, where a convention requires it. A tooling failure that stopped live acceptance is an ask: it goes in the first line, or the closing ask, where the dispatcher acts on it. Written into the middle of the report it reads as a disclosed gap, and the instrument stays broken for the next lane.
 
 **PR body** — first line = what changed and why, in one sentence a reviewer can approve or reject on · *Why* (the decisions with the rejected alternatives) · *Evidence* (the required test type met; the mutation table with failures quoted; live acceptance quoted at the level a person meets it; what was not verified, stated) · *Disclosures* (deviations, pre-merge deploy windows, unrelated findings) · **For agents / the next lane:** the premises built against and what changes if they move, file:line anchors, fixture names, the consumer checklist, the exact authorization lines quoted.
 
@@ -97,5 +107,6 @@ Most artifacts in this work are read by a person **and** by a coding agent: a ru
 8. Does the human section stand without *For agents*? If a sentence there needs the agent block to make sense, move the sentence up.
 9. If the reader asked for options: is the first line the question; are the options tabled before any recommendation; is every row equally filled; is the decision in *Your move* theirs?
 10. Does any "not …" / "never …" / "rather than …" name a mistake the reader could actually make? If it corrects nothing, cut it.
+11. If the content has a board, a flow, a before/after or an option set and the reader is a person: is there a visual at the lowest rung that carries it, and was any diagram looked at after rendering?
 
 If the reader reads only the first line, the state block and the last line, do they know what was decided, where things stand, and what to do next? If yes, send.

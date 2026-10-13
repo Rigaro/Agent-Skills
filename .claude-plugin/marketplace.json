@@ -1,0 +1,44 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "rigaro-agent-skills",
+  "description": "Skills for agentic software development workflows: structured output for ADHD readers, Unity editor workflows, and IEC 62304 verification records.",
+  "owner": {
+    "name": "Ricardo Garcia-Rosas"
+  },
+  "plugins": [
+    {
+      "name": "structured-depth",
+      "description": "Shape replies and agent-facing artifacts for a reader with ADHD who still wants the full reasoning, with a visual companion for boards, flows and diagrams.",
+      "source": "./",
+      "strict": false,
+      "category": "productivity",
+      "skills": [
+        "./skills/structured-depth",
+        "./skills/visual-companion"
+      ]
+    },
+    {
+      "name": "unity-workflows",
+      "description": "Work on a Unity project with a live editor over MCP and the Unity CLI: the edit-compile-test-play loop, Safe Mode recovery, EditMode tests without assembly definitions, and documentation audits.",
+      "source": "./",
+      "strict": false,
+      "category": "development",
+      "skills": [
+        "./skills/unity-live-editor-loop",
+        "./skills/unity-safe-mode-recovery",
+        "./skills/unity-tests-without-asmdef",
+        "./skills/unity-doc-audit"
+      ]
+    },
+    {
+      "name": "regulated-software",
+      "description": "Pull request bodies that double as IEC 62304 / ISO 13485 verification records.",
+      "source": "./",
+      "strict": false,
+      "category": "development",
+      "skills": [
+        "./skills/iec62304-verification-log"
+      ]
+    }
+  ]
+}
