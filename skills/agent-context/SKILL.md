@@ -28,9 +28,12 @@ A team keeps shared context for its AI agents in a Google Drive shared drive cal
 
 1. **Decisions** that affect more than one project or person: add one signed row at the top of the organisation's Decision log, in the same turn the decision is made, and tell your person.
 2. **Facts** that change: edit the topic document in place, update its "Last updated" line, and add one line to its Change log.
-3. Keep each document under about two pages; link to detail instead of copying it. Confidential material stays where it lives and is only linked.
-4. Never delete a document; move it to Archive/ and take it off the index.
-5. Writing in the drive is fine. Anything that reaches people outside it (chat, email, tasks) needs your person's OK first.
+3. **Owners.** The index names each document's owner project. If it names a different project than yours, change that document's facts only once your person has approved, and add a Decision log row that names the owner project so it can update its own memory.
+4. **Safe edits.** Edit only the lines that change; never rewrite a whole document. Re-read it afterwards to check the formatting survived. Watch for `$`: Markdown can turn the text between two `$` signs (prices such as A$3,650 … A$320) into an equation.
+5. **One fact, one version.** Before writing a fact, search the drive for it and update every document that states it, so documents don't disagree.
+6. Keep each document under about two pages; link to detail instead of copying it. When one grows past that, fold settled Decision log rows into the topic documents or split it, and update the index. Confidential material stays where it lives and is only linked.
+7. Never delete a document; move it to Archive/ and take it off the index.
+8. Writing in the drive is fine. Anything that reaches people outside it (chat, email, tasks) needs your person's OK first.
 
 ## 4. Sign every entry
 
@@ -70,8 +73,8 @@ Ask your person to decide every conflict, one decision at a time if there are se
 
 **Phase 3: Apply (only after approval)**
 
-1. Write only what was approved: new rows and edits, each signed for your person; conflict outcomes as new signed decision-log rows that say what they supersede.
+1. Write only what was approved, following every rule in section 3: new rows and edits, each signed for your person; conflict outcomes as new signed decision-log rows that say what they supersede.
 2. If the organisation folder is empty or holds only starter files, follow the bootstrap's "Set up an organisation folder" steps.
 3. Move shared facts out of the project's own memory, or point them at the drive, so the two don't drift.
 4. Suggest the filled-in lines from the bootstrap's "Lines for an agent project's instructions" section for your person to paste into the project's instructions (you can't change project settings yourself).
-5. Report what you changed, with links.
+5. Finish with a closing report to your person: every document you touched, with links, and any open questions.
