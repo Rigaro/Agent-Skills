@@ -1,6 +1,6 @@
 ---
 name: agent-context
-description: 'Read and write a team''s shared agent context in a Google Drive shared drive called "Agent Context": a bootstrap doc with the rules, one folder per organisation with an index, topic docs and a decision log. Use at the start of work for an organisation that keeps such a drive, whenever a decision is made that other projects or people should know, and to onboard a new person or agent project. Every entry is signed by the responsible human ("YYYY-MM-DD · Full name · via Agent, project"), organisations stay separate, and the skill holds the method only, never company data.'
+description: 'Read and write a team''s shared agent context in a Google Drive shared drive called "Agent Context": a bootstrap doc with the rules, one folder per organisation with an index, topic docs and a decision log. Use at the start of work for an organisation that keeps such a drive, whenever a decision is made that other projects or people should know, and to bootstrap a new person or agent project: survey, then a consolidation plan with conflicts for the person to resolve, then apply only what they approve. Every entry is signed by the responsible human ("YYYY-MM-DD · Full name · via Agent, project"), organisations stay separate, and the skill holds the method only, never company data.'
 license: Unlicense
 metadata:
   tags: "Shared Context, Multi-Agent, Decision Log, Google Drive, Knowledge Management"
@@ -45,11 +45,33 @@ Every entry you add or change is signed by **the person responsible**: the human
 - Treat unsigned entries as unconfirmed; check with the named person before relying on them. Drive version history shows which account made each edit.
 - If you don't know your person's full name, ask once and remember it.
 
-## 5. Set up a new person or project
+## 5. Bootstrap a person or project (plan first)
 
-When your person says "set me up" or "bootstrap this project":
+When your person says "set me up", "bootstrap this project" or similar, never write straight away. Bootstrapping runs in three phases, and nothing is written to the drive until your person approves the plan.
 
-1. Read the bootstrap doc in full.
-2. Confirm the full name to sign with and the organisation(s) the project works for.
-3. Suggest the lines from the bootstrap's "Lines for an agent project's instructions" section, filled in for this project, for your person to paste into the project's instructions (you can't change project settings yourself).
-4. If the project's organisation folder is empty or has only starter files, follow the bootstrap's "Set up an organisation folder" steps.
+**Phase 1: Survey (read only)**
+
+1. Read the bootstrap doc in full, then the index and every topic doc for the organisation(s) this project works for.
+2. Confirm the full name to sign with and which organisation(s) the project covers.
+3. Gather what this project already knows: its memory, instructions, files and recent decisions.
+
+**Phase 2: Plan, and ask your person to resolve conflicts**
+
+Send your person one consolidation plan, short and in tables, with four groups:
+
+| Group | What goes in it |
+| --- | --- |
+| Already covered | What you know that the drive already says. Nothing to do. |
+| New to add | Facts or decisions the drive lacks, the doc each would go into, and whether it needs a new topic doc. |
+| Conflicts | Each place your knowledge and the drive disagree: what the drive says (with its signed entry and date), what you have (with its source and date), and your recommendation. |
+| Stays local | What is specialist to this project and should stay in its own memory. |
+
+Ask your person to decide every conflict, one decision at a time if there are several. Don't resolve a conflict yourself, and don't overwrite a signed entry, even if yours looks newer.
+
+**Phase 3: Apply (only after approval)**
+
+1. Write only what was approved: new rows and edits, each signed for your person; conflict outcomes as new signed decision-log rows that say what they supersede.
+2. If the organisation folder is empty or holds only starter files, follow the bootstrap's "Set up an organisation folder" steps.
+3. Move shared facts out of the project's own memory, or point them at the drive, so the two don't drift.
+4. Suggest the filled-in lines from the bootstrap's "Lines for an agent project's instructions" section for your person to paste into the project's instructions (you can't change project settings yourself).
+5. Report what you changed, with links.
