@@ -6,7 +6,7 @@ Reusable [Agent Skills](https://agentskills.io) for agentic software development
 
 | Plugin | Skill | What it does |
 | --- | --- | --- |
-| `structured-depth` | [`structured-depth`](skills/structured-depth/SKILL.md) | Shapes substantive replies and agent-facing artifacts (PR bodies, review verdicts, closure reports) for a reader with ADHD who still wants the full reasoning: the point first, the why in scannable blocks, state and next steps in a table, and a "For agents" block for the precision. |
+| `structured-depth` | [`structured-depth`](skills/structured-depth/SKILL.md) | Shapes substantive replies and agent-facing artifacts (PR bodies, review verdicts, closure reports) for a visual reader with ADHD who still wants the full reasoning: an "At a glance" block with 🔴🟠🟢 urgency markers first, the why in short headed chunks and tables, state and next steps in a table, one decision at a time, and a "For agents" block for the precision. |
 | | [`visual-companion`](skills/visual-companion/SKILL.md) | Picks the visual for a reply or page (table, collapsed evidence, callout, Mermaid diagram, companion artifact page) by what the surface renders, and checks it by rendering and looking. Ships scripts that pre-render Mermaid to light and dark SVG and screenshot the page. |
 | `unity-workflows` | [`unity-live-editor-loop`](skills/unity-live-editor-loop/SKILL.md) | Routes work across the Unity MCP server, Meta XR bridge and Unity CLI, and keeps the edit-compile-test-play loop safe. |
 | | [`unity-safe-mode-recovery`](skills/unity-safe-mode-recovery/SKILL.md) | Detects and recovers a Unity editor in Safe Mode, stuck compiling, or unreachable from MCP and CLI tools. |
