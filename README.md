@@ -8,6 +8,7 @@ Reusable [Agent Skills](https://agentskills.io) for agentic software development
 | --- | --- | --- |
 | `structured-depth` | [`structured-depth`](skills/structured-depth/SKILL.md) | Shapes substantive replies and agent-facing artifacts (PR bodies, review verdicts, closure reports) for a visual reader with ADHD who still wants the full reasoning: an "At a glance" block with 🔴🟠🟢 urgency markers first, the why in short headed chunks and tables, state and next steps in a table, one decision at a time, and a "For agents" block for the precision. |
 | | [`visual-companion`](skills/visual-companion/SKILL.md) | Picks the visual for a reply or page (table, collapsed evidence, callout, Mermaid diagram, companion artifact page) by what the surface renders, and checks it by rendering and looking. Ships scripts that pre-render Mermaid to light and dark SVG and screenshot the page. |
+| `team-context` | [`agent-context`](skills/agent-context/SKILL.md) | Shares context across agent projects, people and accounts through a Google Drive "Agent Context" shared drive: a bootstrap doc, a folder per organisation with an index, topic docs and a decision log. Every entry is signed by the responsible human, and the skill holds the method only. |
 | `unity-workflows` | [`unity-live-editor-loop`](skills/unity-live-editor-loop/SKILL.md) | Routes work across the Unity MCP server, Meta XR bridge and Unity CLI, and keeps the edit-compile-test-play loop safe. |
 | | [`unity-safe-mode-recovery`](skills/unity-safe-mode-recovery/SKILL.md) | Detects and recovers a Unity editor in Safe Mode, stuck compiling, or unreachable from MCP and CLI tools. |
 | | [`unity-tests-without-asmdef`](skills/unity-tests-without-asmdef/SKILL.md) | Adds and runs NUnit EditMode tests in a Unity project that has no assembly definitions. |
@@ -20,6 +21,7 @@ Reusable [Agent Skills](https://agentskills.io) for agentic software development
 
 ```
 /plugin install structured-depth --marketplace Rigaro/Agent-Skills
+/plugin install team-context --marketplace Rigaro/Agent-Skills
 /plugin install unity-workflows --marketplace Rigaro/Agent-Skills
 /plugin install regulated-software --marketplace Rigaro/Agent-Skills
 ```
