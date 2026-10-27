@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "rigaro-agent-skills",
-  "description": "Skills for agentic software development workflows: structured output for ADHD readers, Unity editor workflows, and IEC 62304 verification records.",
+  "description": "Skills for agentic software development workflows: structured output for ADHD readers, shared team context for agents, Unity editor workflows, and IEC 62304 verification records.",
   "owner": {
     "name": "Ricardo Garcia-Rosas"
   },
@@ -15,6 +15,16 @@
       "skills": [
         "./skills/structured-depth",
         "./skills/visual-companion"
+      ]
+    },
+    {
+      "name": "team-context",
+      "description": "Share context and signed decisions across agent projects, people and accounts through an Agent Context shared drive.",
+      "source": "./",
+      "strict": false,
+      "category": "productivity",
+      "skills": [
+        "./skills/agent-context"
       ]
     },
     {
