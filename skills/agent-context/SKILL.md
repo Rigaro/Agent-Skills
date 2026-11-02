@@ -23,6 +23,8 @@ A team keeps shared context for its AI agents in a Google Drive shared drive cal
 3. Read only the documents the task needs, starting with the defaults your project instructions list. All context docs are titled "CTX <Organisation> – <Topic>".
 4. Keep organisations apart: never use one organisation's context in another's work.
 5. If a document and your own memory disagree, the newer signed entry wins. Live systems (CRM, task tracker, accounting) win on current state.
+6. **Stay in sync.** Keep a "last synced with Agent Context" date in your project's memory. At the start of related work, read every Decision log row newer than that date, then set it to today.
+7. **Log your visit.** Drive can't tell agents apart when they share a person's account, so agents record their own access. The first time each day you use the drive, add one row at the bottom of **"CTX Sync log"** (drive root): date, person, agent · project, organisation, docs read, docs changed. If you change more docs later that day, add them to the same row. A periodic read-only check uses this log and the docs' edit dates to flag stale docs and quiet projects.
 
 ## 3. Write
 
@@ -34,6 +36,7 @@ A team keeps shared context for its AI agents in a Google Drive shared drive cal
 6. Keep each document under about two pages; link to detail instead of copying it. When one grows past that, fold settled Decision log rows into the topic documents or split it, and update the index. Confidential material stays where it lives and is only linked.
 7. Never delete a document; move it to Archive/ and take it off the index.
 8. Writing in the drive is fine. Anything that reaches people outside it (chat, email, tasks) needs your person's OK first.
+9. **Before you finish** a task that changed a shared fact or decision, update the drive, or tell your person why not.
 
 ## 4. Sign every entry
 
