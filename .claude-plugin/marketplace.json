@@ -28,6 +28,16 @@
       ]
     },
     {
+      "name": "virtetic-updates",
+      "description": "Virtetic strategy, investor and board-style updates as a one-screen visual email plus an on-brand PDF pack.",
+      "source": "./",
+      "strict": false,
+      "category": "productivity",
+      "skills": [
+        "./skills/virtetic-strategy-update"
+      ]
+    },
+    {
       "name": "unity-workflows",
       "description": "Work on a Unity project with a live editor over MCP and the Unity CLI: the edit-compile-test-play loop, Safe Mode recovery, EditMode tests without assembly definitions, and documentation audits.",
       "source": "./",
