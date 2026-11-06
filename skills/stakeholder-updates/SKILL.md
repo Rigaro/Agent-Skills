@@ -1,6 +1,6 @@
 ---
 name: stakeholder-updates
-description: 'Make a strategy, investor or board-style update in two parts: a one-screen visual email (a Gmail draft with a hero line, 4 big numbers, 5 coloured-dot rows and a "For discussion" box) and an on-brand A4 PDF pack that holds the detail without repeating the email. Use for a monthly strategy or management meeting update, a quarterly shareholder or investor update, a board-style pack, or whenever someone asks for a strategy memo, investor update or meeting pack. Gathers figures from the newest finance paper and the live systems, writes the content once as data, builds Gmail-safe HTML and a Playwright-rendered PDF, checks both by rendering them, and never sends: the person attaches the PDF and sends it. Holds the method only; recipients, thread ids, brand, house rules and figures live in project memory or a shared context drive.'
+description: 'Make a strategy, investor or board-style update in two parts: a one-screen visual email (a Gmail draft with a hero line, 4 big numbers, 5 coloured-dot rows and a "For discussion" box) and an on-brand A4 PDF that tells the month as a story in five one-word pages (Overview, Progress, Runway, Roadmap, Decisions) without repeating the email. Use for a monthly strategy or management meeting update, a quarterly shareholder or investor update, a board-style pack, or whenever someone asks for a strategy memo, investor update or meeting pack. Gathers figures from the newest finance paper and the live systems, writes the content once as data, builds Gmail-safe HTML and a Playwright-rendered PDF, checks both by rendering them, and never sends: the person attaches the PDF and sends it. Holds the method only; recipients, thread ids, brand, house rules and figures live in project memory or a shared context drive.'
 license: Unlicense
 metadata:
   tags: "Investor Update, Board Pack, Stakeholder Communication, Email, PDF, Playwright, ADHD"
@@ -25,8 +25,8 @@ If memory has no entry yet, ask the person once for the recipients, the meeting 
 
 | Variant | Typical cadence | Audience | Shape |
 |---|---|---|---|
-| Meeting update | Monthly, before the strategy or management meeting | Leadership team, advisors, close partners | The full page library, about 5 pages |
-| Shareholder or investor update | Quarterly | Investors | 3 to 4 pages, more narrative, highlight imagery |
+| Meeting update | Monthly, before the strategy or management meeting | Leadership team, advisors, close partners | All 5 story pages, plus Reference if needed |
+| Shareholder or investor update | Quarterly | Investors | 4 pages: Overview, Progress (milestones only, no Stuck column), Runway (runway in one number, by quarter), and **Support** (how investors can help) |
 | Board-style pack | As needed | Board and management | Same look; sits beside the finance team's board papers |
 
 ## 2. Gather (read only)
@@ -90,19 +90,25 @@ Style rules:
   - Use generous space and few boxes, no more than 4 containers on a page.
   - A4 portrait, with body text at 10.5 pt or larger.
   - A footer on every page with the logo, the document name, "Confidential" and the page number.
-- **Pages:** each one works on its own, so a pack can be 4 pages or 8.
-  - **Cover:** the brand band with logo and title, and the hero line. It does **not** repeat the email's rows.
-  - **Financials:**
-    - an SVG month-end cash chart (actuals vs budget, low points highlighted);
-    - a balance table;
-    - "depends on" and "if things slip" lists;
-    - a source line.
-  - **Commercial:** a milestone timeline, a pipeline KPI strip, and rows by region or segment.
-  - **Product, R&D, regulatory and grants:** a KPI strip, the development pipeline, and a grants table.
-  - **Team and admin:** a people table and admin status rows.
+- **Pages:** the pack tells the month as a story. Each page answers one question, in this order.
+  - Every page has a **one-word heading**.
+  - It opens with a **headline sentence** (12 words at most) and a **story line** (1 to 3 sentences).
+  - Then comes **one main visual** that proves the headline. If someone reads only the headlines, they still get the month.
+  - It does **not** repeat the email's rows.
+
+  | # | Heading | Question it answers | Main visual and slots |
+  |---|---|---|---|
+  | 1 | **Overview** | Where are we? | Brand band with the month's headline (you draft it, the person edits). A 3-sentence story. One image: a cleared user photo or a milestone graphic. 3 dated moments. A contents line. |
+  | 2 | **Progress** | What did we do? | Done, Moving and Stuck columns, built from the last pack's open items plus anything new (4 at most per column). "Numbers that moved": the tracked metrics with their change since last time. A win of the month. |
+  | 3 | **Runway** | Can we keep going? | An 18-month SVG month-end cash chart (actuals vs budget, low points highlighted, events labelled). A small revenue-this-year-vs-plan bar. "Depends on" and "if it slips" (4 rows each). A source line. |
+  | 4 | **Roadmap** | What's coming? | A 90-day timeline. Contract or client work gets its own lane, then the organisation's own workstreams. At most 3 points per lane, with deliverables as diamonds and other milestones as dots. A pipeline strip. Short region or segment lines. |
+  | 5 | **Decisions** | What do we need from you? | 2 to 4 decisions, each with 2 lines of context and 2 or 3 options. A suggested call is highlighted and labelled "suggested". Who acts, and by when. The same list as the email's "For discussion" box. |
+  | + | **Reference** | (optional) | Team, admin, the grants table, quality and regulatory status. Plain tables to look things up, not part of the story. |
+
+  The organisation's own settings go in project memory: the tracked metrics, the timeline lanes, and where cleared images come from.
 - **Emoji and photos:**
   - No emoji; use coloured dots instead.
-  - No photos of people unless their consent is recorded as cleared for external readers.
+  - Photos of people come only from the organisation's cleared image set (consent recorded for external readers). Ask whoever looks after it, such as a marketing agent, to supply them.
 - **Check by rendering:**
   1. Confirm the fonts loaded.
   2. Screenshot every page.
