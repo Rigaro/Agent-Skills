@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "rigaro-agent-skills",
-  "description": "Skills for agentic software development workflows: structured output for ADHD readers, shared team context for agents, Unity editor workflows, and IEC 62304 verification records.",
+  "description": "Skills for agentic software development workflows: structured output for ADHD readers, shared team context for agents, stakeholder updates, Unity editor workflows, and IEC 62304 verification records.",
   "owner": {
     "name": "Ricardo Garcia-Rosas"
   },
@@ -28,13 +28,13 @@
       ]
     },
     {
-      "name": "virtetic-updates",
-      "description": "Virtetic strategy, investor and board-style updates as a one-screen visual email plus an on-brand PDF pack.",
+      "name": "stakeholder-updates",
+      "description": "Strategy, investor and board-style updates as a one-screen visual email plus an on-brand PDF pack that holds the detail.",
       "source": "./",
       "strict": false,
       "category": "productivity",
       "skills": [
-        "./skills/virtetic-strategy-update"
+        "./skills/stakeholder-updates"
       ]
     },
     {
